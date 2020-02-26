@@ -1,4 +1,9 @@
 pipeline {
     agent { label 'kube-pod' }
+    stages {
+        stage('first') {
+            sh 'echo $hostname'
+        }
+    }
 }
 
