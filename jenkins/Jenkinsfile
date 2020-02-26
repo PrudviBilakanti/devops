@@ -2,8 +2,15 @@ pipeline {
     agent { label 'kubepods' }
     stages {
         stage('first') {
+            input {
+                message "Testing input"
+                ok "Lets Proceed"
+                parameters {
+                    string(name: 'user', defaultValue: 'PrudviBilakanti', description: 'input testing')
+                }
+            }
             steps{
-                sh 'echo $HOSTNAME'
+                echo 'Hello ${user}'
             }
             
         }
