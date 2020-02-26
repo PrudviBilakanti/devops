@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'kube-pod' }
+    agent { label 'kubepods' }
     stages {
         stage('first') {
             steps{
